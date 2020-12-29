@@ -1,4 +1,4 @@
-const url = "https:weathertelling.herokuapp.com/currentWheather"
+const url = "https://weathertelling.herokuapp.com/currentWheather"
 
 const request = {
     method : 'POST',
