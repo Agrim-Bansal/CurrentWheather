@@ -45,5 +45,3 @@ def getWheatherAt(a : str):
     res['temperature'] = w.temperature('celsius')
     res['rain'] = w.rain
     return res
-
-app.run()
