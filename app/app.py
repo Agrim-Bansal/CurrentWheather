@@ -41,4 +41,4 @@ def getWheatherAt(a : str):
     res['rain'] = w.rain
     return res
 
-app.run()
+app.run(host='0.0.0.0', debug=True)
