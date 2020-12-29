@@ -20,13 +20,8 @@ def req():
         request_json = request.json
         return (getWheatherAt(request_json['place']))
 
-        # return getWheatherAt(request.args)
-        # print("Args :")
-        # return {'text': 'YAY!!!!'}
-        # return content['place']
-        # return wheatherat()
     else :
-        return {"text" : "Error : PLS send POST request"}
+        return {"text" : "Error : Please send POST request"}
 
 
 from pyowm import OWM
@@ -45,3 +40,5 @@ def getWheatherAt(a : str):
     res['temperature'] = w.temperature('celsius')
     res['rain'] = w.rain
     return res
+
+app.run()
