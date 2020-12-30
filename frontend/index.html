@@ -1,5 +1,6 @@
 <html>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -7,9 +8,13 @@
     <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
     
     <div id="form">
-    <input id= "place" value="Hisar" type="search"/>
-    <button id="showWeather">Click Me</button>
+    <input id= "place" value="India" placeholder="Enter the name of City/State/Country ...." type="text" autocomplete="off"/>
+    <span></span>
+    <button id="showWeather" class="btn btn-primary">Click Me</button>
     </div>
+
+    <img id="buffer" src="assets/buffer.gif" height="200em"/>
+
     
     <div id="result">
         <p id="remarks"></p>
@@ -18,7 +23,7 @@
         <p id="temp"></p>
         <p id="temp_min"></p>
         <p id="temp_max"></p>
-        <button id="returnPrevScreen">Go back</button>
+        <button id="returnPrevScreen" class="btn btn-primary">Go back</button>
     </div>
 
     </p>
