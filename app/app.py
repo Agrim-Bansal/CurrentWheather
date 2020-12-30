@@ -1,6 +1,6 @@
 from flask import request, render_template, Flask
 from flask_cors import CORS
-
+from os import environ
 
 app = Flask(__name__)
 CORS(app)
@@ -25,7 +25,7 @@ def req():
 
 
 from pyowm import OWM
-owm = OWM('ba03fa18e8886caf962b3ca43263459b')
+owm = OWM(environ['OWM_API_KEY'])
 mgr = owm.weather_manager()
 
 
@@ -40,6 +40,3 @@ def getWheatherAt(a : str):
     res['temperature'] = w.temperature('celsius')
     res['rain'] = w.rain
     return res
-
-if __name__ == '__main__':
-    app.run()
