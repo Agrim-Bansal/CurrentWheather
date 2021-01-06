@@ -20,8 +20,8 @@ const feels_like = document.getElementById('feels_like')
 const prevScreenButton = document.getElementById('returnPrevScreen')
 
 //Constants for API request
-// const url = "https://weathertelling.herokuapp.com/currentWheather";
-const url = 'http://localhost:5000/currentWheather'
+const url = "https://weathertelling.herokuapp.com/currentWheather";
+// const url = 'http://localhost:5000/currentWheather'
 const request = {
     method : 'POST',
     headers: {
