@@ -1,4 +1,4 @@
-from flask import request, render_template, Flask
+from flask import request, render_template, Flask, abort, redirect
 from flask_cors import CORS
 from os import environ
 
@@ -21,7 +21,9 @@ def req():
         return (getWheatherAt(request_json['place']))
 
     else :
-        return {"text" : "Error : Please send POST request"}
+
+        return abort(404)
+
 
 
 from pyowm import OWM
