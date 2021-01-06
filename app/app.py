@@ -46,5 +46,3 @@ def getWheatherAt(a : str):
     res['url'] = url[:-4] + '@4x.png'
 
     return res
-
-app.run(debug=True)
