@@ -26,6 +26,7 @@ def req():
 
 from pyowm import OWM
 owm = OWM(environ['OWM_API_KEY'])
+
 mgr = owm.weather_manager()
 
 
@@ -35,8 +36,15 @@ def getWheatherAt(a : str):
     w = observation.weather
     res["location"] = a
     res["remarks"] = w.detailed_status
-    res["wind_speed"] = w.wind()['speed']
+    res["wind_speed"] = str(round(float(w.wind(unit='meters_sec')['speed'] * 18/5),2))
     res['humidity'] = w.humidity
     res['temperature'] = w.temperature('celsius')
-    res['rain'] = w.rain
+    res['sunrise'] = w.sunrise_time(timeformat='iso')
+    res['sunset'] = w.sunset_time(timeformat='iso')
+
+    url = w.weather_icon_url()
+    res['url'] = url[:-4] + '@4x.png'
+
     return res
+
+app.run(debug=True)

@@ -9,23 +9,25 @@ const formbackspace = document.getElementById('form_backspace')
 
 //The display elements
 const result_div = document.getElementById('result') 
+const img = document.getElementById('img') 
 const remarks = document.getElementById('remarks')
 const humidity = document.getElementById('humidity')
 const wind = document.getElementById('wind')
 const temp = document.getElementById('temp')
-const temp_min = document.getElementById('temp_min')
-const temp_max = document.getElementById('temp_max')
+const sunrise = document.getElementById('sunrise')
+const sunset = document.getElementById('sunset')
+const feels_like = document.getElementById('feels_like')
 const prevScreenButton = document.getElementById('returnPrevScreen')
 
 //Constants for API request
-const url = "https://weathertelling.herokuapp.com/currentWheather";
+// const url = "https://weathertelling.herokuapp.com/currentWheather";
+const url = 'http://localhost:5000/currentWheather'
 const request = {
     method : 'POST',
     headers: {
         'Content-Type': 'application/json'
     }
 };
-
 
     // window.onload= () =>{
     //     showWeatherButton.click()
@@ -55,8 +57,9 @@ async function showWeather(){
         remarks.innerHTML = "";
         humidity.innerHTML = "";
         temp.innerHTML = "";
-        temp_max.innerHTML = "";
-        temp_min.innerHTML = "";
+        feels_like.innerHTML = "";
+        sunrise.innerHTML = "";
+        sunset.innerHTML = "";
         wind.innerHTML = "";
         window.alert("Some error occured. \nEither You have not entered a valid location or \nthe location is not supported")
     }
@@ -70,13 +73,19 @@ showWeatherReport = async (place) =>{
     }
     
     else{
+    img.src = weather['url']
+    console.log(weather['url'])
+    remarks.innerHTML= `${weather['remarks']}` 
+    humidity.innerHTML= `${weather['humidity']}%` 
+    wind.innerHTML= `${weather['wind_speed']} km/h` 
+    temp.innerHTML= `${weather['temperature']['temp']} &degC` 
+    feels_like.innerHTML= `${weather['temperature']['feels_like']} &degC` 
 
-    remarks.innerHTML= `Remarks : ${weather['remarks']}` 
-    humidity.innerHTML= `Humidity : ${weather['humidity']}` 
-    wind.innerHTML= `Wind : ${weather['wind_speed']}` 
-    temp.innerHTML= `Temperature : ${weather['temperature']['temp']}` 
-    temp_max.innerHTML= `Maximum temperature : ${weather['temperature']['temp_max']}` 
-    temp_min.innerHTML= `Minimum temperature : ${weather['temperature']['temp_min']}` 
+    weather['sunrise'] = weather['sunrise'].split(' ')[1].split(['+'])[0]
+    weather['sunset'] = weather['sunset'].split(' ')[1].split(['+'])[0]
+
+    sunrise.innerHTML= `${weather['sunrise']} UTC` 
+    sunset.innerHTML= `${weather['sunset']} UTC` 
     
 }
 }

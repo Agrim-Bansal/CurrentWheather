@@ -5,10 +5,9 @@
 </head>
 
 <body>
-    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
     
     <div id="form">
-    <input id= "place" value="India" placeholder="Enter the name of City/State/Country ...." type="text" autocomplete="off"/>
+    <input id= "place" placeholder="Enter the name of City/State/Country ...." type="text" autocomplete="off"/>
     <span></span>
     <button id="showWeather" class="btn btn-primary">Click Me</button>
     </div>
@@ -17,12 +16,39 @@
 
     
     <div id="result">
+        <img id="img" />
+
         <p id="remarks"></p>
-        <p id="humidity"></p>
-        <p id="wind"></p>
-        <p id="temp"></p>
-        <p id="temp_min"></p>
-        <p id="temp_max"></p>
+
+        <div class = "res">
+            <div class="col-left">Humidity : </div><div id="humidity" class="col-right"></div>
+        </div>
+        
+        <div class = "res">
+            <div class="col-left">Wind : </div><div class="col-right" id="wind"></div>
+        </div>
+
+        <div class = "res">
+            <div class="col-left">Temperature</div><div class="col-right" id="temp"></div>
+        </div>
+        
+        <div class = "res">
+            <div class="col-left">Feels Like</div><div class="col-right" id="feels_like"></div>
+        </div>
+
+        <div class = "res">
+            <div class="col-left">Sunrise</div><div class="col-right" id="sunrise"></div>
+        </div>
+
+        <div class = "res">
+            <div class="col-left">Sunset</div><div class="col-right" id="sunset"></div>
+        </div>
+        
+
+        
+        <br/>
+
+
         <button id="returnPrevScreen" class="btn btn-primary">Go back</button>
     </div>
 
