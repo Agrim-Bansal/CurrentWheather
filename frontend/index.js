@@ -61,6 +61,7 @@ async function showWeather(){
         sunrise.innerHTML = "";
         sunset.innerHTML = "";
         wind.innerHTML = "";
+        prevScreenButton.click();
         window.alert("Some error occured. \nEither You have not entered a valid location or \nthe location is not supported")
     }
 }
