@@ -1,20 +1,25 @@
 body{
-    padding: 6em;
+    padding: 2em;
     margin : 3em;
     text-align: center;
-    background-color: #121212;
+    background: linear-gradient(35deg, #a75ff0, #ff5fa7);
     color:#eee;
     vertical-align: middle;
+    font-family: sans-serif;
 }
 
+h1{
+    margin-bottom: 1em;
+    text-shadow: 0px 0px 5px black;
+}
 
 #result,
 #form
 {
-    background-color: #212121;
+    background: linear-gradient(25deg, #077ff0, #0ff770);
     padding:1em;
-    border-radius: 3em;
-    box-shadow: #000 0.55em 0.55em 1em 0.3em;
+    border-radius: 0.75em;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,50%);
 }
 #result{
     display: none;
@@ -34,22 +39,31 @@ body{
     border-radius: 3em;
 }
 .btn-primary{
-    background-color: #e0e0e0;
+    background-color: rgba(0, 75, 255, 90%);
     color: #000;
+    padding: 1%;
+}
+
+.btn-primary:hover{
+    transform: scale(1.1, 1.2) ;
 }
 
 #place{
     display: block;
-    width: 100%;
+    margin: auto;
+    width: 75%;
     text-align:center ;
     border-style: solid;
     height:3em;
-    border-radius: 1em;
+    border-radius: 0.25em;
+    background-color: #ddd;
+    font-family: sans-serif;
+    font-size: larger;
 }
 
 #place:focus{
     outline: none;
-    background-color: #ddd;
+    background-color: #eeeeee;
 }
 
 span{
@@ -65,7 +79,7 @@ span{
 }
 
 #img{
-    border-style: groove;
+    border-style: none;
     border-radius: 50%;
 }
 #remarks{
@@ -89,11 +103,11 @@ span{
     border-color: #000;
     margin:10px;
     width: 50%;
-    padding: 2%;
+    padding: 1%;
     text-align: center;
     font-family: cursive;
     box-shadow: 2px 0 5px 2px #000;
-    font-size: large;
+    font-size: x-large;
 }
 
 .col-right{
@@ -108,5 +122,5 @@ span{
 }
 
 .res:hover{
-    box-shadow: 1px 0 1px 2px #000;
+    transform: scale(1.01, 1.01);
 }
