@@ -99,14 +99,11 @@ span{
 
 .col-right,
 .col-left{
-    border-style: dashed;
-    border-color: #000;
-    margin:10px;
+    /* margin:10px; */
     width: 50%;
     padding: 1%;
     text-align: center;
     font-family: cursive;
-    box-shadow: 2px 0 5px 2px #000;
     font-size: x-large;
 }
 
@@ -121,6 +118,56 @@ span{
     border-right: none;
 }
 
-.res:hover{
-    transform: scale(1.01, 1.01);
+
+@media (max-width: 500px){
+    body{
+        padding: 1em;
+        margin: 1em;
+    }
+    h1{
+        font-size: 2em;
+    }
+
+    #img{
+        height: 7em;
+        width: 7em
+    }
+
+    #head-img{
+        height: 6em;
+        width: auto;
+    }
+
+    #place{
+        font-size: 1.5em;
+    }
+
+    #place::placeholder{
+        color: transparent;
+    }
+
+    #remarks{
+        font-size:1.5em;
+    }
+
+    .col-left,
+    .col-right{
+        font-size: large;
+    }
+}
+
+@media (max-width: 350px){
+    h1{
+        font-size: 1.5em;
+    }
+    body{
+        padding: 0.5em;
+        margin: 0.5em;
+    }
+    #head-img{
+        height: 4em;
+    }
+    #place{
+        font-size: 1em;
+    }
 }
